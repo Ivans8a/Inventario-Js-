@@ -80,17 +80,3 @@ i.agregar(p3)
 i.agregar(p4)
 
 console.log(i.listado())
-
-
-let v = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-function eliminar1(i) {
-    v[i] = v[i + 1]
-    v[i + 1] = v[i + 2]
-}
-v[5] = v[6]
-v[6] = v[7]
-v[7] = v[8]
-v.pop(8)
-
-//console.log(v)
