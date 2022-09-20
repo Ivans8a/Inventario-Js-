@@ -79,4 +79,14 @@ i.agregar(p2)
 i.agregar(p3)
 i.agregar(p4)
 
+function mostrarLista() {
+    document.getElementById('listado').innerHTML = i.agregar(1, "asd", 12, 123)
+}
+document.getElementById("ListaProductos").onclick = function() {
+    mostrarLista()
+}
+
+let a = 10;
+let b = 20;
+
 console.log(i.listado())
