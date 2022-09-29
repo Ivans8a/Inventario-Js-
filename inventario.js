@@ -8,10 +8,15 @@ class Inventario {
     }
 
     eliminar(codigo) {
-        for (let i = this.obtenerIndice(codigo); i < this.vector.length - 1; i++) {
-            this.vector[i] = this.vector[i + 1]
+        if (this.obtenerIndice(codigo) == this.vector.length + 1) {
+
+        } else {
+            for (let i = this.obtenerIndice(codigo); i < this.vector.length - 1; i++) {
+                this.vector[i] = this.vector[i + 1]
+            }
+            this.vector.pop(this.vector.length)
         }
-        this.vector.pop(this.vector.length)
+
         return this.vector
     }
 
@@ -21,7 +26,7 @@ class Inventario {
                 return i
             }
         }
-        return "No existe"
+        return this.vector.length + 1
     }
 
     buscar(codigo) {
@@ -30,7 +35,7 @@ class Inventario {
                 return this.vector[i]
             }
         }
-        return "No existe"
+        return null
     }
 
     listado() {
@@ -78,15 +83,10 @@ i.agregar(p1)
 i.agregar(p2)
 i.agregar(p3)
 i.agregar(p4)
+i.eliminar(0)
 
-function mostrarLista() {
-    document.getElementById('listado').innerHTML = i.agregar(1, "asd", 12, 123)
-}
-document.getElementById("ListaProductos").onclick = function() {
-    mostrarLista()
-}
 
 let a = 10;
 let b = 20;
 
-console.log(i.listado())
+console.log(i)
